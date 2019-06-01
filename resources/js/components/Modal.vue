@@ -1,7 +1,11 @@
 <template>
     <div>
         <div class="sho-admin-modal">
-            here is the content
+            <tabs>
+                <tab name="nice" :selected="true">Nice content</tab>
+                <tab name="nice2">Nice 2 content</tab>
+                <tab name="nice3">Nice 3 content</tab>
+            </tabs>
         </div>
         <div class="sho-admin-overlay" @click="hideModal"></div>
     </div>

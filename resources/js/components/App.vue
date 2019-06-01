@@ -18,7 +18,7 @@ import Modal from './Modal'
 export default {
     data() {
         return {
-            isVisible: false,
+            isVisible: true,
         }
     },
     created() {
