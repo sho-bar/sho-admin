@@ -1,3 +1,48 @@
-.sho-admin-bar-btn .ab-item {
-  cursor: pointer !important;
+[v-cloak] {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  background-color: #8c97a2;
+}
+
+.sho-admin-overlay {
+  position: fixed !important;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: visible;
+}
+
+.sho-admin-modal {
+  width: 70% !important;
+  height: 80vh !important;
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 20;
+  background: white;
+  overflow-y: scroll;
+  color: #232323 !important;
+  padding: 2em !important;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7) !important;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7) !important;
+  font-size: 1.3em !important;
 }

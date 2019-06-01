@@ -13,8 +13,12 @@ class Hook
     {
         add_action('admin_bar_menu', function ($wp_admin_bar) {
             $wp_admin_bar->add_node([
-                'id' => 'sho-quick-pr',
-                'title' => '<template id="sho-admin-vue-app"><app></app></template>',
+                'id' => 'sho-admin',
+                'title' => '
+                    <div id="sho-admin-vue-app">
+                        <div><app></app></div>
+                    </div>
+                ',
                 'meta' => [
                     'class' => 'sho-admin-bar-btn'
                 ],
