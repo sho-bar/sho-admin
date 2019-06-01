@@ -66,29 +66,34 @@
 }
 
 .sho-admin-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
   height: 55px;
   width: 100%;
   margin: 0 auto;
-  margin-bottom: .8em;
+  margin-bottom: 2em;
   white-space: nowrap;
 }
 
 .sho-admin-tabs__tab {
   display: inline-block;
   text-align: center;
-  line-height: 55px;
-  height: 55px;
+  line-height: 50px;
+  height: 50px;
   padding: 0 12px;
   margin: 0;
   text-transform: uppercase;
-  border-bottom: 1px solid grey;
-}
-
-.sho-admin-tabs__tab:last-child {
-  border-right: none;
 }
 
 .sho-admin-tabs__tab a {
@@ -96,16 +101,19 @@
   display: block;
   width: 100%;
   height: 100%;
-  padding: 0 17px;
-  font-size: 14px;
+  padding: 0 20px;
+  font-size: 15px;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-transition: color .28s ease, background-color .28s ease;
-  transition: color .28s ease, background-color .28s ease;
+  -webkit-transition: color .300ms;
+  transition: color .300ms;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
 }
 
-.sho-admin-tabs__tab a:focus, .sho-admin-tabs__tab a:focus.sho-admin-active, .sho-admin-tabs__tab a.sho-admin-active {
+.sho-admin-tabs__tab a:focus, .sho-admin-tabs__tab a:active, .sho-admin-tabs__tab a:focus.sho-admin-active, .sho-admin-tabs__tab a.sho-admin-active {
   color: #d85349;
+  border-bottom-color: #d85349;
   outline: none;
 }
 

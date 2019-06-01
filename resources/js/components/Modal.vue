@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="sho-admin-modal">
+        <div class="sho-admin-modal sho-admin-modal-active">
             <tabs>
                 <tab name="nice" :selected="true">Nice content</tab>
                 <tab name="nice2">Nice 2 content</tab>
