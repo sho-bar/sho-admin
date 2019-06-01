@@ -1,7 +1,14 @@
 <template>
-    <div @click="isVisible = !isVisible">
-        <span class="ab-label">#ШО админ</span>
-        <modal v-if="isVisible"></modal>
+    <div>
+        <!-- Button -->
+        <span class="ab-label" @click="isVisible = true">
+            #ШО админ
+        </span>
+
+        <!-- Modal -->
+        <transition name="slide" mode="out-in">
+            <modal v-if="isVisible"></modal>
+        </transition>
     </div>
 </template>
 
@@ -19,7 +26,7 @@ export default {
     },
     methods: {
         hideModal() {
-            Event.$on('hide-modal', () => isVisible = !isVisible)
+            Event.$on('hide-modal', () => this.isVisible = false)
         },
     },
     components: {
@@ -27,3 +34,13 @@ export default {
     },
 }
 </script>
+
+<style lang="sass" scoped>
+.slide
+    &-enter-active,
+    &-leave-active
+        transition: opacity 300ms !important
+
+    &-enter, &-leave-to
+        opacity: 0 !important
+</style>

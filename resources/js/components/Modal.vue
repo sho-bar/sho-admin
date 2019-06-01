@@ -9,10 +9,10 @@
 
 <script>
 export default {
-    data() {
-        return {
-            //
-        }
+    created() {
+        window.addEventListener('keyup', e => {
+            e.key === "Escape" ? this.hideModal() : null
+        })
     },
     methods: {
         hideModal() {
