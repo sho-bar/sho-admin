@@ -24,7 +24,6 @@
     ],
     "author": "Serhii Cho",
     "dependencies": {
-        "vue": "^2.6.10",
-        "vue-router": "^3.0.6"
+        "vue": "^2.6.10"
     }
 }
