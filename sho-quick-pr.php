@@ -15,5 +15,5 @@ defined('ABSPATH') || exit;
 define('SHO_QUICK_PR_PATH', plugin_dir_path(__FILE__));
 define('SHO_QUICK_PR_URL', plugin_dir_url(__FILE__));
 
-// require_once('vendor/autoload.php');
+require_once('vendor/autoload.php');
 require_once('bootstrap.php');
