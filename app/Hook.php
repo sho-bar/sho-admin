@@ -43,6 +43,11 @@ class Hook
             wp_register_script('sho-admin-js', SHO_ADMIN_URL . $js, [],
                 Helper::fileVersion($js));
 
+            wp_localize_script('sho-admin-js', 'sho_admin_globals', [
+                'ajax_url' => admin_url('admin-ajax.php'),
+                'nonce' => wp_create_nonce('sho-admin'),
+            ]);
+
             wp_enqueue_script('sho-admin-js', SHO_ADMIN_URL . $js, [],
                 Helper::fileVersion($js), true);
         });
