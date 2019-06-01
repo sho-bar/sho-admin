@@ -19,32 +19,50 @@
 }
 
 .sho-admin-overlay {
-  position: fixed !important;
-  z-index: 10;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  background-color: transparent;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+
+.sho-admin-overlay.sho-admin-overlay-active {
+  z-index: 99999;
   pointer-events: visible;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sho-admin-modal {
-  width: 70% !important;
-  height: 80vh !important;
-  position: fixed !important;
+  width: 70%;
+  height: 80vh;
+  position: fixed;
+  z-index: 100000;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 20;
   background: white;
   overflow-y: scroll;
-  color: #232323 !important;
-  padding: 2em !important;
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7) !important;
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7) !important;
-  font-size: 1.3em !important;
+  color: #232323;
+  padding: 2em;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  font-size: 1.3em;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-transform: translate(-50%, -200%);
+          transform: translate(-50%, -200%);
+}
+
+.sho-admin-modal.sho-admin-modal-active {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .sho-admin-tabs {
@@ -74,7 +92,7 @@
 }
 
 .sho-admin-tabs__tab a {
-  color: #232323 !important;
+  color: #232323;
   display: block;
   width: 100%;
   height: 100%;
@@ -87,7 +105,7 @@
 }
 
 .sho-admin-tabs__tab a:focus, .sho-admin-tabs__tab a:focus.sho-admin-active, .sho-admin-tabs__tab a.sho-admin-active {
-  border-bottom: 2px solid red;
+  color: #d85349;
   outline: none;
 }
 

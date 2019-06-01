@@ -1,22 +1,32 @@
 .sho-admin-overlay
-    position: fixed !important
-    z-index: 10
+    position: fixed
     top: 0
     left: 0
     right: 0
     bottom: 0
-    background-color: rgba(0,0,0,.4)
-    pointer-events: visible
+    pointer-events: none
+    background-color: transparent
+    transition: background-color 300ms
+
+    &.sho-admin-overlay-active
+        z-index: 99999
+        pointer-events: visible
+        background-color: rgba(0,0,0,.5)
 
 .sho-admin-modal
-    width: 70% !important
-    height: 80vh !important
-    position: fixed !important
+    width: 70%
+    height: 80vh
+    position: fixed
+    z-index: 100000
     @include center
-    z-index: 20
     background: $color-modal
     overflow-y: scroll
     color: $color-font
-    padding: 2em !important
+    padding: 2em
     box-shadow: $shadow
-    font-size: 1.3em !important
+    font-size: 1.3em
+    transition: transform 300ms
+    transform: translate(-50%, -200%)
+
+    &.sho-admin-modal-active
+        transform: translate(-50%, -50%)

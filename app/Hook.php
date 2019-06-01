@@ -16,7 +16,7 @@ class Hook
                 'id' => 'sho-admin',
                 'title' => '
                     <div id="sho-admin-vue-app">
-                        <div><app></app></div>
+                        <div><admin-btn></admin-btn></div>
                     </div>
                 ',
                 'meta' => [
