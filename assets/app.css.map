@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./resources/sass/app.sass"],"names":[],"mappings":"AAAA,gCACI,wBAA0B","file":"assets/app.css","sourcesContent":[".sho-qpr-admin-bar-btn .ab-item {\n    cursor: pointer !important; }\n\n\n\n// WEBPACK FOOTER //\n// ./resources/sass/app.sass"],"sourceRoot":""}
