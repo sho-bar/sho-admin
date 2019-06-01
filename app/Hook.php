@@ -2,35 +2,47 @@
 
 namespace ShoQuickPr;
 
+use ShoQuickPr\Helper;
+
 class Hook
 {
     /**
      * @return self
      */
-    public function registerFrontendPage(): self
+    public function registerVueComponent(): self
     {
-        add_action('admin_menu', function () {
-            add_menu_page(...$this->getFrontendPageAttributes());
-        });
+        add_action('admin_bar_menu', function ($wp_admin_bar) {
+            $wp_admin_bar->add_node([
+                'id' => 'sho-quick-pr',
+                'title' => '<template id="sho-quick-pr-vue-app"><app></app></template>',
+                'meta' => [
+                    'class' => 'sho-qpr-admin-bar-btn'
+                ],
+            ]);
+        }, 100);
 
         return $this;
     }
 
     /**
-     * @return array
+     * @return self
      */
-    public function getFrontendPageAttributes(): array
+    public function registerAssets(): self
     {
-        return [
-            'Sho Quick PR',
-            'Sho Quick PR',
-            'manage_options',
-            'nalognl_report',
-            function (): void {
-                require_once SHO_QUICK_PR_PATH . 'frontend.php';
-            },
-            'dashicons-format-gallery',
-            90
-        ];
+        add_action('admin_enqueue_scripts', function () {
+            $css = 'assets/app.css';
+            $js = 'assets/vue.js';
+
+            wp_enqueue_style('sho-qpr-style', SHO_QUICK_PR_URL . $css, [],
+                Helper::fileVersion($css));
+
+            wp_register_script('sho-qpr-js', SHO_QUICK_PR_URL . $js, [],
+                Helper::fileVersion($js));
+
+            wp_enqueue_script('sho-qpr-js', SHO_QUICK_PR_URL . $js, [],
+                Helper::fileVersion($js), true);
+        });
+
+        return $this;
     }
 }

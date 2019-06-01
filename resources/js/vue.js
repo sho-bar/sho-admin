@@ -2,5 +2,5 @@ import './bootstrap'
 import './components'
 
 new Vue({
-    el: '#app',
+    el: '#sho-quick-pr-vue-app',
 })

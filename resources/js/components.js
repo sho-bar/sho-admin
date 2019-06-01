@@ -1,1 +1,1 @@
-Vue.component('hello', require('./components/Hello'))
+Vue.component('app', require('./components/App'))

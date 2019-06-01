@@ -7,7 +7,7 @@ Description: Custom plugin for shobar.com.ua
 Version: 0.1
 License: no
 License URI: https://www.linkedin.com/in/serhii-chornenkyi-573005187/
-Text Domain: sho-quick-pr
+Text Domain: sho-qpr
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 

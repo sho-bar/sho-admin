@@ -1,4 +1,5 @@
 <?php
 
 (new \ShoQuickPr\Hook)
-    ->registerFrontendPage();
+    ->registerVueComponent()
+    ->registerAssets();
