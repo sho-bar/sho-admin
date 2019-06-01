@@ -1,0 +1,20 @@
+{
+    "name": "serhii_cho/sho_quick_pr",
+    "description": "Wordpress plugin for shobar.com.ua website",
+    "keywords": ["wordpress", "shobar", "plugin"],
+    "type": "project",
+    "authors": [
+        {
+            "name": "Serhii Cho",
+            "email": "serhiicho@protonmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ShoQuickPr\\": "app"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2"
+    }
+}
