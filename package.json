@@ -1,5 +1,5 @@
 {
-    "name": "sho-quick-pr",
+    "name": "sho-admin",
     "version": "1.0.0",
     "description": "Wordpress theme for shobar.com.ua website",
     "main": "vue.js",
@@ -24,6 +24,7 @@
     ],
     "author": "Serhii Cho",
     "dependencies": {
-        "vue": "^2.6.10"
+        "vue": "^2.6.10",
+        "vue-router": "^3.0.6"
     }
 }

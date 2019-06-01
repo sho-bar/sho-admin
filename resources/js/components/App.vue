@@ -1,7 +1,7 @@
 <template>
     <div>
         <span class="ab-label">
-            <span style="font-size:17px;margin-right: 4px">&#x271A;</span> Фото отчет
+            #ШО админ
         </span>
     </div>
 </template>

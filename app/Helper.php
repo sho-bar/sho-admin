@@ -1,6 +1,6 @@
 <?php
 
-namespace ShoQuickPr;
+namespace ShoAdmin;
 
 class Helper
 {
@@ -13,7 +13,7 @@ class Helper
     public static function fileVersion(string $file): string
     {
         try {
-            return filemtime(SHO_QUICK_PR_PATH . $file);
+            return filemtime(SHO_ADMIN_PATH . $file);
         } catch (Exception $e) {
             return '';
         }

@@ -1,5 +1,5 @@
 {
-    "name": "serhii_cho/sho_quick_pr",
+    "name": "serhii_cho/sho_admin",
     "description": "Wordpress plugin for shobar.com.ua website",
     "keywords": ["wordpress", "shobar", "plugin"],
     "type": "project",
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ShoQuickPr\\": "app"
+            "ShoAdmin\\": "app"
         }
     },
     "require-dev": {

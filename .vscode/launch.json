@@ -10,7 +10,7 @@
             "request": "launch",
             "port": 9000,
             "pathMappings": {
-                "/var/www/html/wp-content/plugins/sho-quick-pr": "${workspaceRoot}"
+                "/var/www/html/wp-content/plugins/sho-admin": "${workspaceRoot}"
             },
         },
         {
@@ -20,7 +20,7 @@
             "program": "${file}",
             "cwd": "${fileDirname}",
             "pathMappings": {
-                "/var/www/html/wp-content/plugins/sho-quick-pr": "${workspaceRoot}"
+                "/var/www/html/wp-content/plugins/sho-admin": "${workspaceRoot}"
             },
             "port": 9000
         }

@@ -1,5 +1,5 @@
 <?php
 
-(new \ShoQuickPr\Hook)
+(new \ShoAdmin\Hook)
     ->registerVueComponent()
     ->registerAssets();
