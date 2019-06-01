@@ -26,8 +26,8 @@
   bottom: 0;
   pointer-events: none;
   background-color: transparent;
-  -webkit-transition: background-color 300ms;
-  transition: background-color 300ms;
+  -webkit-transition: background-color 100ms;
+  transition: background-color 100ms;
 }
 
 .sho-admin-overlay.sho-admin-overlay-active {
