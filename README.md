@@ -1,0 +1,1 @@
+This wordpress plugin is an edition to a custom theme theme Shobar. It contains aditional features for admin panel using Vue.js and VueRouter.
