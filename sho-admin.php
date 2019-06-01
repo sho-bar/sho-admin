@@ -15,6 +15,6 @@ defined('ABSPATH') || exit;
 define('SHO_ADMIN_PATH', plugin_dir_path(__FILE__));
 define('SHO_ADMIN_URL', plugin_dir_url(__FILE__));
 
-require_once('vendor/autoload.php');
-require_once('bootstrap.php');
+require_once 'vendor/autoload.php';
+require_once 'bootstrap.php';
 require_once 'ajax.php';
