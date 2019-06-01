@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="sho-admin-modal">
+        <div class="sho-admin-modal sho-admin-modal-active">
             <tabs>
                 <tab name="Фото отчеты" :selected="true">
                     <photo-report></photo-report>
