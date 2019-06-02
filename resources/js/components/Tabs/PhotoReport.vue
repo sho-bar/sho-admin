@@ -1,5 +1,7 @@
 <template>
     <div class="sho-admin-form--wrap">
+        <h2 class="sho-admin-form__title">Добавить фото отчет</h2>
+
         <form enctype="multipart/form-data" class="sho-admin-form" @submit.prevent="createReport($event)">
             <!-- Title input -->
             <div class="sho-admin-form__input">
@@ -24,7 +26,7 @@
             </div>
 
             <!-- Submit button and spinner -->
-            <div style="margin-top:27px">
+            <div style="margin-top:30px">
                 <button type="submit"
                     class="sho-admin-form__btn"
                     :disabled="loading"

@@ -144,6 +144,12 @@
   text-align: left;
 }
 
+.sho-admin-form__title {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 1.6em;
+}
+
 .sho-admin-form--wrap {
   text-align: center;
 }
@@ -154,7 +160,8 @@
 
 .sho-admin-form__input label {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 2px;
+  font-size: .9em;
 }
 
 .sho-admin-form__input input {
