@@ -60,12 +60,11 @@ export default {
                 .then(res => {
                     this.loading = false
 
-                    if (res.data == 'success') {
-                        Event.$emit('show-message', 'Фото отчет успешно создан')
+                    if (res.data.status == 'success') {
                         this.clearInputs(e)
-                    } else {
-                        Event.$emit('show-message', 'Ошибка сервера')
                     }
+
+                    Event.$emit('show-message', res.data.msg)
                 })
                 .catch(err => {
                     this.loading = false

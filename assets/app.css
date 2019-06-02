@@ -173,3 +173,8 @@
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
           box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
+
+.sho-admin-message a {
+  color: #d6ffca;
+  text-transform: uppercase;
+}

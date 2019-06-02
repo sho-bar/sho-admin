@@ -58,12 +58,19 @@ class PhotoReportHandler
         ]);
 
         if ($post_id == 0) {
-            return 'error';
+            return json_encode([
+                'msg' => 'Ошибка сервера',
+                'status' => 'error',
+            ]);
         }
 
         $thumb_id = media_handle_sideload($this->image, $post_id);
         set_post_thumbnail($post_id, $thumb_id);
+        $slug = get_post_field('post_name', $post_id);
 
-        return 'success';
+        return json_encode([
+            'msg' => "Фото отчет успешно создан. <a href='{$slug}'>Просмотреть!</a>",
+            'status' => 'error',
+        ]);
     }
 }

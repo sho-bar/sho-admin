@@ -17,9 +17,10 @@
 
         <!-- Message -->
         <transition name="slide">
-            <div class="sho-admin-message" v-if="message.length != 0">
-                {{ message }}
-            </div>
+            <div class="sho-admin-message"
+                v-if="message.length != 0"
+                v-html="message"
+            ></div>
         </transition>
     </div>
 </template>
@@ -49,7 +50,7 @@ export default {
         },
         showMessage(msg) {
             this.message = msg
-            setTimeout(() => this.message = '', 5000)
+            setTimeout(() => this.message = '', 6000)
         }
     },
     components: {
