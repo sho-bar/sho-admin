@@ -57,9 +57,13 @@ class PhotoReportHandler
             'post_category' => [current($cats)->cat_ID],
         ]);
 
+        if ($post_id == 0) {
+            return 'error';
+        }
+
         $thumb_id = media_handle_sideload($this->image, $post_id);
         set_post_thumbnail($post_id, $thumb_id);
 
-        return is_int($post_id) ? 'success' : 'error';
+        return 'success';
     }
 }
