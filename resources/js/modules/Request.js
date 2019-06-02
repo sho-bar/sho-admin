@@ -1,33 +1,17 @@
 import axios from 'axios'
 
 /**
- * This class makes api request and gets data
+ * This class makes api request and gets data or sends data
  */
 export default class {
     /**
-     * @param {object} data
+     * @param {FormData} formData
      * @return {void}
      */
-    constructor(data) {
-        this.data = data
-        return axios.post(sho_admin_globals.ajax_url, this.createParams())
-    }
+    constructor(formData) {
+        this.formData = formData
+        this.formData.append('_ajax_nonce', sho_admin_globals.nonce)
 
-    /**
-     * Creates parameters for the axios AJAX request
-     * 
-     * @return {URLSearchParams}
-     */
-    createParams() {
-        const params = new URLSearchParams()
-
-        params.append('action', this.data.method)
-        params.append('_ajax_nonce', sho_admin_globals.nonce)
-
-        if (this.data.params) {
-            params.append('params', JSON.stringify(this.data.params))
-        }
-
-        return params
+        return axios.post(sho_admin_globals.ajax_url, this.formData)
     }
 }

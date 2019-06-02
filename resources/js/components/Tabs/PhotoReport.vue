@@ -30,16 +30,14 @@ export default {
     },
     methods: {
         createReport(e) {
-            const options = {
-                params: {
-                    name: e.target.name.value,
-                    image: e.target.image.value,
-                    shortcode: e.target.shortcode.value,
-                },
-                method:'add_photo_report',
-            }
+            const formData = new FormData()
 
-            new Request(options)
+            formData.append('name', e.target.name.value)
+            formData.append('image', e.target.image.files[0])
+            formData.append('shortcode', e.target.shortcode.value)
+            formData.append('action', 'add_photo_report')
+
+            new Request(formData)
                 .then(res => console.log(res.data))
                 .catch(err => console.log(err))
         },
