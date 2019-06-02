@@ -7,14 +7,14 @@
             </div>
             <div class="sho-admin-form__input">
                 <label for="sho-admin-shortcode">Эльвира Шорткод</label>
-                <input type="text" id="sho-admin-shorcode" name="shortcode" value="22" required>
+                <input type="text" id="sho-admin-shorcode" name="shortcode" value="[some code here]" required>
             </div>
             <div class="sho-admin-form__input">
                 <label for="sho-admin-image">Изображение</label>
                 <input type="file" id="sho-admin-image" name="image" >
             </div>
             <div class="submit">
-                <input type="submit" name="submit" class="button button-primary" value="Создать">
+                <input type="submit" class="button button-primary" value="Создать">
                 <a href="javascript:;" class="button">Автозаполнение</a>
             </div>
         </form>
@@ -34,7 +34,7 @@ export default {
                 params: {
                     name: e.target.name.value,
                     image: e.target.image.value,
-                    shorcode: e.target.shortcode.value,
+                    shortcode: e.target.shortcode.value,
                 },
                 method:'add_photo_report',
             }
