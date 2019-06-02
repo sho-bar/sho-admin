@@ -24,13 +24,14 @@
             </div>
 
             <!-- Submit button and spinner -->
-            <div class="submit">
-                <input type="submit"
-                    class="button button-primary"
-                    value="Создать"
-                    :disabled="loading">
+            <div style="margin-top:27px">
+                <button type="submit"
+                    class="sho-admin-form__btn"
+                    :disabled="loading"
+                >Создать</button>
+
                 <a href="javascript:;"
-                    class="button"
+                    class="sho-admin-form__btn sho-admin-form__btn--flat"
                     :class="{disabled: loading}"
                     @click="autofillInputFields()"
                 >Автозаполнение</a>

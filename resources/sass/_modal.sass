@@ -10,8 +10,8 @@
     background-color: rgba(0,0,0,.5)
 
 .sho-admin-modal
-    width: 70%
-    height: 80vh
+    width: 50%
+    height: 70vh
     position: fixed
     z-index: 100000
     @include center
@@ -22,3 +22,8 @@
     box-shadow: $shadow
     font-size: 1.3em
     transition: transform 300ms
+
+@media only screen and (max-width: $media-sm)
+    .sho-admin-modal
+        width: 90%
+        height: 70vh

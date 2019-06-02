@@ -17,3 +17,31 @@
             width: 100%
             height: 30px
             border: 1px solid #ddd
+
+    &__btn
+        display: inline-block
+        background: $color-primary
+        border: none
+        color: #fff
+        border-radius: 2px
+        padding: 4px 13px
+        line-height: 26px
+        text-decoration: none
+        text-shadow: none
+        font-weight: 600
+        font-size: 15px
+        transition: background-color 200ms
+        user-select: none
+
+        &:hover
+            background: darken($color-primary, 5%)
+            color: #fff
+
+        &--flat
+            color: $color-primary
+            background-color: transparent
+            transition: color 200ms
+
+            &:hover
+                background-color: transparent
+                color: darken($color-primary, 5%)
