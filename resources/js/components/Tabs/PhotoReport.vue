@@ -1,26 +1,36 @@
 <template>
     <div class="sho-admin-form--wrap">
         <form enctype="multipart/form-data" class="sho-admin-form" @submit.prevent="createReport($event)">
+            <!-- Title input -->
             <div class="sho-admin-form__input">
                 <label for="sho-admin-name">Заголовок</label>
                 <input type="text" id="sho-admin-name" name="name" value="2019 в #ШО" required>
             </div>
+
+            <!-- Shortcode input -->
             <div class="sho-admin-form__input">
                 <label for="sho-admin-shortcode">Эльвира Шорткод</label>
-                <input type="text" id="sho-admin-shorcode" name="shortcode" value='[envira-gallery id=""]' required>
+                <input type="text"
+                    id="sho-admin-shorcode"
+                    name="shortcode"
+                    value='[envira-gallery id=""]'
+                    required
+                >
             </div>
+
+            <!-- Image input -->
             <div class="sho-admin-form__input">
                 <label for="sho-admin-image">Изображение</label>
                 <input type="file" id="sho-admin-image" name="image" required>
             </div>
+
+            <!-- Submit button and spinner -->
             <div class="submit">
                 <input type="submit"
                     class="button button-primary"
                     value="Создать"
                     :disabled="loading">
-                <a href="javascript:;" class="button" :class="{disabled: loading}">
-                    Автозаполнение
-                </a>
+                <a href="javascript:;" class="button" :class="{disabled: loading}">Автозаполнение</a>
                 <div class="sho-admin-spinner" v-if="loading"></div>
             </div>
         </form>
@@ -49,15 +59,23 @@ export default {
             new Request(formData)
                 .then(res => {
                     this.loading = false
-                    res.data == 'success'
-                        ? Event.$emit('show-message', 'Фото отчет успешно создан')
-                        : Event.$emit('show-message', 'Ошибка сервера')
+
+                    if (res.data == 'success') {
+                        Event.$emit('show-message', 'Фото отчет успешно создан')
+                        this.clearInputs(e)
+                    } else {
+                        Event.$emit('show-message', 'Ошибка сервера')
+                    }
                 })
                 .catch(err => {
                     this.loading = false
                     console.log(err)
                 })
         },
+        clearInputs(event) {
+            event.target.name.value = ''
+            event.target.shortcode.value = ''
+        }
     },
 }
 </script>
