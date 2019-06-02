@@ -4,16 +4,15 @@
             <!-- Title input -->
             <div class="sho-admin-form__input">
                 <label for="sho-admin-name">Заголовок</label>
-                <input type="text" id="sho-admin-name" name="name" value="2019 в #ШО" required>
+                <input type="text" id="sho-admin-name" name="name" required>
             </div>
 
             <!-- Shortcode input -->
             <div class="sho-admin-form__input">
                 <label for="sho-admin-shortcode">Эльвира Шорткод</label>
                 <input type="text"
-                    id="sho-admin-shorcode"
+                    id="sho-admin-shortcode"
                     name="shortcode"
-                    value='[envira-gallery id=""]'
                     required
                 >
             </div>
@@ -30,7 +29,11 @@
                     class="button button-primary"
                     value="Создать"
                     :disabled="loading">
-                <a href="javascript:;" class="button" :class="{disabled: loading}">Автозаполнение</a>
+                <a href="javascript:;"
+                    class="button"
+                    :class="{disabled: loading}"
+                    @click="autofillInputFields()"
+                >Автозаполнение</a>
                 <div class="sho-admin-spinner" v-if="loading"></div>
             </div>
         </form>
@@ -60,8 +63,10 @@ export default {
                 .then(res => {
                     this.loading = false
 
+                    // Clear inputs
                     if (res.data.status == 'success') {
-                        this.clearInputs(e)
+                        this.insertValueIntoInput('name', '') 
+                        this.insertValueIntoInput('shortcode', '') 
                     }
 
                     Event.$emit('show-message', res.data.msg)
@@ -71,9 +76,27 @@ export default {
                     console.log(err)
                 })
         },
-        clearInputs(event) {
-            event.target.name.value = ''
-            event.target.shortcode.value = ''
+        insertValueIntoInput(name, value) {
+            document.getElementById(`sho-admin-${name}`).value = value
+        },
+        autofillInputFields() {
+            this.loading = true
+
+            const formData = new FormData()
+            
+            formData.append('action', 'get_last_envira')
+
+            new Request(formData)
+                .then(res => {
+                    this.loading = false
+                    this.insertValueIntoInput('name', res.data.post_title) 
+                    this.insertValueIntoInput('shortcode', `[envira-gallery id="${res.data.ID}"]`) 
+                    Event.$emit('show-message', 'Поля заполнены успешно')
+                })
+                .catch(err => {
+                    this.loading = false
+                    console.log(err)
+                })
         }
     },
 }
