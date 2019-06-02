@@ -20,16 +20,15 @@ class PhotoReportHandler
     private $shortcode;
 
     /**
-     * @param \stdClass $request
      * @return void
      */
-    public function __construct(\stdClass $request)
+    public function __construct()
     {
         check_ajax_referer('sho-admin');
 
-        $this->name = $request->name;
-        $this->image = $request->image;
-        $this->shortcode = $request->shortcode;
+        $this->name = $_POST['name'];
+        $this->image = $_FILES['image'];
+        $this->shortcode = $_POST['shortcode'];
     }
 
     /**
@@ -50,7 +49,7 @@ class PhotoReportHandler
             return $cat->category_nicename === 'photo-reports';
         });
 
-        $response = wp_insert_post([
+        $post_id = wp_insert_post([
             'post_status' => 'publish',
             'post_author' => 1,
             'post_content' => $this->shortcode,
@@ -58,6 +57,9 @@ class PhotoReportHandler
             'post_category' => [current($cats)->cat_ID],
         ]);
 
-        return is_int($response) ? 'success' : 'error';
+        $thumb_id = media_handle_sideload($this->image, $post_id);
+        set_post_thumbnail($post_id, $thumb_id);
+
+        return is_int($post_id) ? 'success' : 'error';
     }
 }
