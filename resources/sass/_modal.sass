@@ -4,14 +4,10 @@
     left: 0
     right: 0
     bottom: 0
-    pointer-events: none
-    background-color: transparent
     transition: background-color 100ms
-
-    &.sho-admin-overlay-active
-        z-index: 99999
-        pointer-events: visible
-        background-color: rgba(0,0,0,.5)
+    z-index: 99999
+    pointer-events: visible
+    background-color: rgba(0,0,0,.5)
 
 .sho-admin-modal
     width: 70%
@@ -26,7 +22,3 @@
     box-shadow: $shadow
     font-size: 1.3em
     transition: transform 300ms
-    transform: translate(-50%, -200%)
-
-    &.sho-admin-modal-active
-        transform: translate(-50%, -50%)

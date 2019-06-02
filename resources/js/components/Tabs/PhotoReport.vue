@@ -49,7 +49,9 @@ export default {
             new Request(formData)
                 .then(res => {
                     this.loading = false
-                    console.log(res.data)
+                    res.data == 'success'
+                        ? Event.$emit('show-message', 'Фото отчет успешно создан')
+                        : Event.$emit('show-message', 'Ошибка сервера')
                 })
                 .catch(err => {
                     this.loading = false
