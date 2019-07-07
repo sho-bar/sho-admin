@@ -27,6 +27,7 @@
 
 <script>
 import PhotoReport from './Tabs/PhotoReport'
+
 export default {
     data() {
         return {
@@ -34,6 +35,7 @@ export default {
             modal: false,
         }
     },
+
     created() {
         window.addEventListener('keyup', e => {
             e.key === "Escape" ? this.hideModal() : null
@@ -41,6 +43,7 @@ export default {
         Event.$on('show-message', msg => this.showMessage(msg))
         Event.$on('show-modal', () => this.showModal())
     },
+
     methods: {
         showModal() {
             this.modal = true

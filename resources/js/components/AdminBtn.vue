@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Button -->
-        <span class="ab-label" @click="showModal()">
+        <span class="ab-label" @click="showModal">
             #ШО админ
         </span>
     </div>

@@ -45,12 +45,14 @@
 
 <script>
 import Request from '../../modules/Request'
+
 export default {
     data() {
         return {
             loading: false,
         }
     },
+
     methods: {
         createReport(e) {
             this.loading = true
@@ -79,9 +81,11 @@ export default {
                     console.log(err)
                 })
         },
+
         insertValueIntoInput(name, value) {
             document.getElementById(`sho-admin-${name}`).value = value
         },
+
         autofillInputFields() {
             this.loading = true
 
