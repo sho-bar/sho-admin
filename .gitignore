@@ -3,3 +3,6 @@ assets/main.js
 node_modules/
 vendor/
 mix-manifest.json
+package.json
+yarn.lock
+composer.lock
