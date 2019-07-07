@@ -2,14 +2,7 @@
     <div>
         <!-- Modal -->
         <div class="sho-admin-modal" v-if="modal">
-            <tabs>
-                <tab name="Фото отчеты" :selected="true">
-                    <photo-report></photo-report>
-                </tab>
-                <tab name="Обрезать фото">
-                    Этот раздел еще не готов
-                </tab>
-            </tabs>
+            <photo-report></photo-report>
         </div>
 
         <!-- Overlay -->
