@@ -12,10 +12,6 @@ class Helper
      */
     public static function fileVersion(string $file): string
     {
-        try {
-            return filemtime(SHO_ADMIN_PATH . $file);
-        } catch (Exception $e) {
-            return '';
-        }
+        return filemtime(SHO_ADMIN_PATH . $file) ?? '';
     }
 }
