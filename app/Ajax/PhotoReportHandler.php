@@ -6,25 +6,16 @@ use ShoAdmin\DB;
 
 class PhotoReportHandler
 {
-    /**
-     * @return void
-     */
     public function __construct()
     {
         check_ajax_referer('sho-admin');
     }
 
-    /**
-     * @return void
-     */
     public function __destruct()
     {
         wp_reset_postdata();
     }
 
-    /**
-     * @return string
-     */
     public function insertReport(): string
     {
         $name = $_POST['name'];
@@ -61,9 +52,7 @@ class PhotoReportHandler
         ]);
     }
 
-    /**
-     * @return string|bool
-     */
+    /** @return string|bool */
     public function getLastEnvira()
     {
         return json_encode(DB::getLastEnviraPost());
