@@ -2,13 +2,8 @@
 
 namespace ShoAdmin;
 
-use ShoAdmin\Helper;
-
 class Hook
 {
-    /**
-     * @return self
-     */
     public function registerVueComponent(): self
     {
         add_action('admin_bar_menu', function ($wp_admin_bar) {
@@ -28,28 +23,21 @@ class Hook
         return $this;
     }
 
-    /**
-     * @return self
-     */
     public function registerAssets(): self
     {
         add_action('admin_enqueue_scripts', function () {
             $css = 'assets/app.css';
             $js = 'assets/vue.js';
 
-            wp_enqueue_style('sho-admin-style', SHO_ADMIN_URL . $css, [],
-                Helper::fileVersion($css));
-
-            wp_register_script('sho-admin-js', SHO_ADMIN_URL . $js, [],
-                Helper::fileVersion($js));
+            wp_enqueue_style('sho-admin-style', SHO_ADMIN_URL . $css, [], Helper::fileVersion($css));
+            wp_register_script('sho-admin-js', SHO_ADMIN_URL . $js, [], Helper::fileVersion($js));
 
             wp_localize_script('sho-admin-js', 'sho_admin_globals', [
                 'ajax_url' => admin_url('admin-ajax.php'),
                 'nonce' => wp_create_nonce('sho-admin'),
             ]);
 
-            wp_enqueue_script('sho-admin-js', SHO_ADMIN_URL . $js, [],
-                Helper::fileVersion($js), true);
+            wp_enqueue_script('sho-admin-js', SHO_ADMIN_URL . $js, [], Helper::fileVersion($js), true);
         });
 
         return $this;
