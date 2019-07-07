@@ -5,7 +5,7 @@ namespace ShoAdmin;
 class DB
 {
     /**
-     * @return void
+     * @return array|object|null Database query results
      */
     public static function getLastEnviraPost()
     {
@@ -17,7 +17,8 @@ class DB
             where post_type = 'envira'
             order by ID desc
             limit 1;
-SQL;
+        SQL;
+
         return $wpdb->get_results($sql)[0];
     }
 }
