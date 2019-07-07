@@ -4,7 +4,7 @@
             <li v-for="tab in tabs" :key="tab.name"
                 class="sho-admin-tabs__tab"
             >
-                <a href="#"
+                <a href="javascript:;"
                     v-html="tab.name"
                     :class="{ 'sho-admin-active': tab.active }"
                     @click="selectedTab(tab)">
