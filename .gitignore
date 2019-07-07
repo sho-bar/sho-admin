@@ -1,8 +1,7 @@
-assets/main.js.map
-assets/main.js
 node_modules/
 vendor/
 mix-manifest.json
-package.json
+package-lock.json
 yarn.lock
 composer.lock
+yarn-error.log
