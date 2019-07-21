@@ -4,7 +4,7 @@ Plugin Name: Sho Admin
 Author: Serhii Cho
 Author URI: https://www.linkedin.com/in/serhii-chornenkyi-573005187/
 Description: Custom plugin for shobar.com.ua
-Version: 0.1
+Version: 0.2
 License: no
 License URI: https://www.linkedin.com/in/serhii-chornenkyi-573005187/
 Text Domain: sho-qpr
