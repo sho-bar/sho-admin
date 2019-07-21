@@ -69,7 +69,7 @@ export default {
                     this.loading = false
 
                     // Clear inputs
-                    if (res.data.status == 'success') {
+                    if (res.data.status === 'success') {
                         this.insertValueIntoInput('name', '') 
                         this.insertValueIntoInput('shortcode', '') 
                     }
@@ -90,14 +90,14 @@ export default {
             this.loading = true
 
             const formData = new FormData()
-            
+
             formData.append('action', 'get_last_envira')
 
             new Request(formData)
                 .then(res => {
                     this.loading = false
                     this.insertValueIntoInput('name', res.data.post_title) 
-                    this.insertValueIntoInput('shortcode', `[envira-gallery id="${res.data.ID}"]`) 
+                    this.insertValueIntoInput('shortcode', `[envira-gallery id="${res.data.ID}"]`)
                     Event.$emit('show-message', 'Поля заполнены успешно')
                 })
                 .catch(err => {
